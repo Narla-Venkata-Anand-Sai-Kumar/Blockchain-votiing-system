@@ -1,19 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<br>
-	<div style="width: 100%; display: flex; justify-content: space-between;">
-		<div style="width: 65%; padding: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 8px; background-color: #f9f9f9;">
+	<div style="width: 100%; display: flex; justify-content: space-between; gap: 20px; margin-bottom: 40px;">
+		<div style="width: 65%; padding: 30px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); border-radius: 15px; background-color: #f4f7f9; transition: transform 0.3s ease;">
+			<h3 style="color: #34495e; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 20px;">🎯 Cast Your Vote</h3>
 			<form action="/submit" id="textform" method="post">
-				<h3 style="color: #333;">Vote for Your Party</h3>
-				<table style="width: 100%;">
+				<table style="width: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 					<tr>
-						<td style="padding-bottom: 10px;">
-							<label for="party" style="font-weight: bold; color: #555;">Select Political Party</label>
+						<td style="padding-bottom: 20px;">
+							<label for="party" style="font-weight: bold; color: #34495e;">Political Party</label>
 						</td>
-						<td style="padding-bottom: 10px;">
-							<select name="party" id="party" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
-								<option value="">Select</option>
+						<td style="padding-bottom: 20px;">
+							<select name="party" id="party" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #bdc3c7; background-color: #ecf0f1; color: #2c3e50;">
+								<option value="" disabled selected>Select a party</option>
 								{% for political_partie in political_parties %}
 								<option value="{{ political_partie }}">{{ political_partie }}</option>
 								{% endfor %}
@@ -21,30 +20,31 @@
 						</td>
 					</tr>
 					<tr>
-						<td style="padding-bottom: 10px;">
-							<label for="voter_id" style="font-weight: bold; color: #555;">Enter Voter ID <small style="color: #888;">(from sample IDs)</small></label>
+						<td style="padding-bottom: 20px;">
+							<label for="voter_id" style="font-weight: bold; color: #34495e;">Voter ID <small style="color: #7f8c8d;">(from sample IDs)</small></label>
 						</td>
-						<td style="padding-bottom: 10px;">
-							<input type="text" name="voter_id" id="voter_id" placeholder="VOID001" required style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+						<td style="padding-bottom: 20px;">
+							<input type="text" name="voter_id" id="voter_id" placeholder="Enter Voter ID" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #bdc3c7; background-color: #ecf0f1; color: #2c3e50;">
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align: right;">
-							<input type="submit" value="Vote" style="padding: 10px 20px; background-color: #28a745; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease;">
+							<input type="submit" value="Vote" style="padding: 15px 30px; background-color: #3498db; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">
 						</td>
 					</tr>
 				</table>
 			</form>
 		</div>
-		<div style="width: 30%; padding: 20px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 8px; background-color: #f9f9f9; overflow-y: auto;">
-			<h3 style="color: #333;">Sample Voter IDs</h3>
-			<table style="width: 100%; text-align: left;">
+
+		<div style="width: 30%; padding: 30px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); border-radius: 15px; background-color: #f4f7f9; overflow-y: auto; transition: transform 0.3s ease;">
+			<h3 style="color: #34495e; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 20px;">🗳️ Sample Voter IDs</h3>
+			<table style="width: 100%; text-align: left; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 				<tr>
-					<th style="color: #333; padding-bottom: 10px;">Voter ID</th>
+					<th style="color: #34495e; padding-bottom: 15px; font-weight: bold;">Voter ID</th>
 				</tr>
 				{% for voter_id in voter_ids %}
 				<tr>
-					<td style="padding: 8px 0; color: #555;">{{ voter_id }}</td>
+					<td style="padding: 12px 0; color: #2c3e50; border-bottom: 1px solid #ecf0f1;">{{ voter_id }}</td>
 				</tr>
 				{% endfor %}
 			</table>
@@ -53,17 +53,17 @@
 
 	<hr>
 
-	<center style="margin: 20px 0;">
-		<a href="{{ node_address }}/mine" target="_blank"><button style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">Request to Mine</button></a>
-		<a href="/"><button style="padding: 10px 20px; background-color: #6c757d; color: #fff; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">Resync</button></a>
-		<a href="{{ node_address }}/chain" target="_blank"><button style="padding: 10px 20px; background-color: #28a745; color: #fff; border: none; border-radius: 4px; cursor: pointer;">View Chain</button></a>
+	<center style="margin: 30px 0;">
+		<a href="{{ node_address }}/mine" target="_blank"><button style="padding: 15px 30px; background-color: #1abc9c; color: #fff; border: none; border-radius: 8px; cursor: pointer; margin-right: 20px; transition: background-color 0.3s ease, transform 0.3s ease;">🚀 Request to Mine</button></a>
+		<a href="/"><button style="padding: 15px 30px; background-color: #95a5a6; color: #fff; border: none; border-radius: 8px; cursor: pointer; margin-right: 20px; transition: background-color 0.3s ease, transform 0.3s ease;">🔄 Resync</button></a>
+		<a href="{{ node_address }}/chain" target="_blank"><button style="padding: 15px 30px; background-color: #e74c3c; color: #fff; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">🔗 View Chain</button></a>
 	</center>
 
 	<hr>
 
-	<div style="display: flex; justify-content: space-between; margin: 20px;">
+	<div style="display: flex; justify-content: space-between; gap: 20px; margin: 20px;">
 		<div class="col-md-6">
-			<h2 style="color: #333;">Result Detail</h2>
+			<h2 style="color: #34495e; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">📊 Result Detail</h2>
 			<table>
 				<tr>
 					<th>Voter ID</th>
@@ -80,8 +80,8 @@
 			</table>
 		</div>
 
-		<div class="col-md-4" style="margin-left: 10px;">
-			<h2 style="color: #333;">Result Summary</h2>
+		<div class="col-md-4">
+			<h2 style="color: #34495e; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">🏆 Result Summary</h2>
 			<table>
 				<tr>
 					<th>Political Party Name</th>
@@ -99,35 +99,46 @@
 
 	<style>
 		table {
-			font-family: Arial, sans-serif;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			border-collapse: collapse;
 			width: 100%;
 			margin-top: 20px;
 		}
 
 		th, td {
-			border: 1px solid #dddddd;
+			border: 1px solid #ecf0f1;
 			text-align: left;
-			padding: 12px;
+			padding: 15px;
 		}
 
 		th {
-			background-color: #007bff;
+			background-color: #3498db;
 			color: white;
+			font-weight: bold;
 		}
 
 		tr:nth-child(even) {
-			background-color: #f2f2f2;
+			background-color: #f9f9f9;
 		}
 
 		tr:hover {
-			background-color: #f1f1f1;
+			background-color: #e8f5fa;
 			transition: background-color 0.3s ease;
 		}
 
+		button:hover {
+			transform: scale(1.05);
+		}
+
 		.col-md-4, .col-md-6 {
-			float: left;
 			width: 48%;
+		}
+
+		/* Box shadow and hover effects for cards */
+		.card:hover {
+			transform: translateY(-5px);
+			box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
 		}
 	</style>
 {% endblock %}
