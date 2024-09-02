@@ -1,7 +1,7 @@
 # E-voting-system-using-blockchain-and-python
 
 ## Outline
-1. Reference Research Paper
+1. Blockchain E-voting system
     1. Abstract
     2. Introduction
     3. Blockchain
@@ -17,18 +17,6 @@
 3. Instructions to run application
 4. References
 
-## 1. Reference Research Paper
-This project is based on the concept of research paper which was published in International Journal of Network Security & Its Applications (IJNSA) entitled **"A CONCEPTUAL SECURE BLOCKCHAIN- BASED ELECTRONIC VOTING SYSTEM"** by Ahmed Ben Ayed 
-
-### Review, Summary of  **"A Conceptual Secure Blockchain-based Electronic Voting System"** 
-[Paper Link](https://aircconline.com/ijnsa/V9N3/9317ijnsa01.pdf)
-OR
-[Researchgate] (https://www.researchgate.net/publication/341498272_A_CONCEPTUAL_SECURE_BLOCKCHAIN-BASED_ELECTRONIC_VOTING_SYSTEM)
-OR
-[This repository] ((https://github.com/adhikarir/E-voting-system-using-blockchain-and-python/blob/master/reference-paper/Blockchain_Voting_System20200318-112191-yzyxvw-with-cover-page-v2.pdf))
-
-#### Abstract
-This paper support the open source Blockchain technology to propose a design for a new electronic voting system that could be used in local or national elections.
 
 #### Introduction
 An e-Voting system has to have heightened security in order make sure it is available to voters but protected against outside influences changing votes from being cast, or keep a voter’s ballot from being tampered with. Many electronic voting systems rely on to hide the identity of voters. However, this technique does not provide total anonymity or integrity since many intelligence agencies around the world control different parts of the Internet which can allow them to identify or intercept votes. 
@@ -163,7 +151,7 @@ The transactions will be initially stored as a pool of unconfirmed transactions.
 Clone the project,
 
 ```sh
-$ git clone https://github.com/adhikarir/E-voting-system-using-blockchain-and-python.git
+$ git clone https://github.com/Narla-Venkata-Anand-Sai-Kumar/Blockchain-votiing-system.git
 ```
 
 Install the dependencies,
@@ -180,7 +168,7 @@ Start a blockchain node server,
 $ export FLASK_APP=service.py
 $ flask run --port 8000
 or
-python3 -m flask run --port 8000
+python -m flask run --port 8000
 ```
 
 One instance of our blockchain node is now up and running at port 8000.
