@@ -157,7 +157,7 @@ $ git clone https://github.com/Narla-Venkata-Anand-Sai-Kumar/Blockchain-votiing-
 Install the dependencies,
 
 ```sh
-$ cd E-voting-system-using-blockchain-and-python
+$ cd Blockchain-votiing-system
 $ pip install -r requirements.txt
 ```
 
